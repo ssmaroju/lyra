@@ -1,0 +1,132 @@
+$label-width: 60px;
+$long-label-width: $label-width + 10px;
+
+#inspector {
+  h2 {
+    background-color: $mblue-bg;
+    color: #fff;
+  }
+
+  h3 {
+    margin: $inner-padding 0;
+    color: $blue-font;
+    font-weight: bold;
+    cursor: default;
+    justify-content: flex-start;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .inner {
+    padding: 0 $outer-padding;
+  }
+}
+
+.property-group {
+  padding: $outer-padding 0;
+  border-bottom: 1px solid $lgrey-bg;
+
+  &.property {
+    margin-bottom: 0;
+  }
+}
+.last {
+  margin-bottom: 50px;
+}
+
+.property {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: $outer-padding 0;
+
+  label, .label { width: $label-width; }
+  h3, .label-long { width: $long-label-width; }
+
+  &.first-child { margin-bottom: 0; }
+
+  .control {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding-left: $inner-padding;
+
+    .scale {
+      padding: 3px ($outer-padding+$inner-padding) 2px $inner-padding;
+      min-width: auto;
+      max-width: 30px;
+      border: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      & + .field {
+        margin-left: (-$outer-padding);
+      }
+
+      & + input {
+        margin-left: (-$outer-padding);
+        padding: 3px $inner-padding;
+        border: 1px solid #ddd;
+        border-radius: $outer-padding;
+      }
+    }
+
+    .field {
+      max-width: 65px;
+      padding: 3px $inner-padding;
+      border: 0;
+      border-radius: $outer-padding;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &:hover {
+      .scale, .field {
+        cursor: pointer;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .extra {
+    width: 100%;
+    margin-top: $inner-padding;
+  }
+
+  input[type=range] { width: 70px; }
+
+  input[type=number],
+  input[type=text] {
+    width: 75px;
+  }
+
+  .content-editable {
+    color: #000;
+    display: inline-block;
+    margin-left: $inner-padding;
+    border-bottom: 1px dashed #777;
+  }
+
+  .button {
+    background-color: white;
+    padding: $inner-padding 1.5*$inner-padding;
+    margin-right: $inner-padding;
+  }
+
+  .button-secondary {
+    background-color: rgba(66, 184, 221, 0.5);
+  }
+}
+
+.more-props-label {
+  display: block;
+  color: $blue-font;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer !important;
+
+  &:hover { color: $grey-font !important; }
+}

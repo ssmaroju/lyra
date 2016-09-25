@@ -1,2 +1,12 @@
-node_modules
 .DS_Store
+.idea
+_site
+bower_components
+coverage
+node_modules
+*.log
+output
+temp
+build
+Gemfile.lock
+docs
